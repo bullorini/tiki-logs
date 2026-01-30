@@ -3,15 +3,27 @@
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
+import type { Photo } from "./GalleryGrid";
+
+type Props = {
+  isOpen: boolean;
+  photo: Photo | null;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  canPrev: boolean;
+  canNext: boolean;
+};
+
 export default function LightboxModal({
   isOpen,
-  photo,          // { src, alt }
+  photo,
   onClose,
   onPrev,
   onNext,
   canPrev,
   canNext,
-}) {
+}: Props) {
   const [scale, setScale] = useState(1);
 
   const zoomIn = useCallback(() => setScale((s) => Math.min(3, +(s + 0.25).toFixed(2))), []);
@@ -37,7 +49,7 @@ export default function LightboxModal({
   useEffect(() => {
     if (!isOpen) return;
 
-    const onKeyDown = (e) => {
+    const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowLeft" && canPrev) onPrev();
       if (e.key === "ArrowRight" && canNext) onNext();
@@ -50,14 +62,16 @@ export default function LightboxModal({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [isOpen, onClose, onPrev, onNext, canPrev, canNext, zoomIn, zoomOut, resetZoom]);
 
+
   const onWheelZoom = useCallback(
-    (e) => {
+    (e: React.WheelEvent<HTMLDivElement>) => {
       e.preventDefault();
       const delta = e.deltaY > 0 ? -0.1 : 0.1;
       setScale((s) => Math.min(3, Math.max(1, +(s + delta).toFixed(2))));
     },
     []
   );
+
 
   const scaleLabel = useMemo(() => `${Math.round(scale * 100)}%`, [scale]);
 

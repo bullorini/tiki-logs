@@ -6,10 +6,13 @@ import homePhotos from "@/data/photos-home.json";
 import outdoorPhotos from "@/data/photos-outdoor.json";
 import colorPhotos from "@/data/photos-color.json";
 
-export default function Home() {
-  const [category, setCategory] = useState("home"); // ✅ default
+type Photo = { id: string; src: string; alt: string };
+type Category = "home" | "outdoor" | "color";
 
-  const datasets = useMemo(
+export default function Home() {
+  const [category, setCategory] = useState<Category>("home");
+
+  const datasets = useMemo<Record<Category, Photo[]>>(
     () => ({
       home: homePhotos,
       outdoor: outdoorPhotos,
@@ -23,7 +26,7 @@ export default function Home() {
   const baseBtn =
     "flex h-12 w-full items-center justify-center rounded-full px-5 transition-colors md:w-[158px]";
 
-  const getBtnClass = (key) =>
+  const getBtnClass = (key: Category) =>
     [
       baseBtn,
       category === key

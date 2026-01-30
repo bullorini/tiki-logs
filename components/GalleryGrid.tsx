@@ -4,8 +4,18 @@ import Image from "next/image";
 import { useCallback, useMemo, useState } from "react";
 import LightboxModal from "./LightboxModal";
 
-export default function GalleryGrid({ photos = [] }) {
-  const [activeIndex, setActiveIndex] = useState(null);
+export type Photo = {
+  id: string;
+  src: string;
+  alt: string;
+};
+
+type GalleryGridProps = {
+  photos: Photo[];
+};
+
+export default function GalleryGrid({ photos }: GalleryGridProps) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const isOpen = activeIndex !== null;
   const activePhoto = useMemo(
@@ -13,7 +23,7 @@ export default function GalleryGrid({ photos = [] }) {
     [isOpen, activeIndex, photos]
   );
 
-  const open = useCallback((idx) => setActiveIndex(idx), []);
+  const open = useCallback((idx: number) => setActiveIndex(idx), []);
   const close = useCallback(() => setActiveIndex(null), []);
 
   const canPrev = isOpen && activeIndex > 0;
