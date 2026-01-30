@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Grid from "./grid";
 import GalleryGrid from "@/components/GalleryGrid";
 import homePhotos from "@/data/photos-home.json";
 import outdoorPhotos from "@/data/photos-outdoor.json";
@@ -24,7 +23,6 @@ export default function Home() {
   const baseBtn =
     "flex h-12 w-full items-center justify-center rounded-full px-5 transition-colors md:w-[158px]";
 
-  // DRY: estilos activo/inactivo
   const getBtnClass = (key) =>
     [
       baseBtn,
