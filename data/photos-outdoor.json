@@ -1,0 +1,12 @@
+[
+  { "id": "o1", "src": "/img/outdoor/DSC_2815_tiki.jpg", "alt": "Outdoor 1" },
+  { "id": "o2", "src": "/img/outdoor/P1200348_tiki.jpg", "alt": "Outdoor 2" },
+  { "id": "o3", "src": "/img/outdoor/P6080326_tiki (3).jpg", "alt": "Outdoor 3" },
+  { "id": "o4", "src": "/img/outdoor/P6150269_tiki.jpg", "alt": "Outdoor 4" },
+  { "id": "o5", "src": "/img/outdoor/P6180577_tiki-1.jpg", "alt": "Outdoor 5" },
+  { "id": "o6", "src": "/img/outdoor/P7020137_tiki.jpg", "alt": "Outdoor 6" },
+  { "id": "o7", "src": "/img/outdoor/P7060287_tiki.jpg", "alt": "Outdoor 7" },
+  { "id": "o8", "src": "/img/outdoor/P7060367_tiki.jpg", "alt": "Outdoor 8" },
+  { "id": "o9", "src": "/img/outdoor/P7260209_tiki.jpg", "alt": "Outdoor 9" },
+  { "id": "o10", "src": "/img/outdoor/P8160225_tiki.jpg", "alt": "Outdoor 10" }
+]
