@@ -39,14 +39,13 @@ export default function GalleryGrid({ photos }: GalleryGridProps) {
 
   return (
     <>
-      <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {photos.map((p, idx) => (
             <button
               key={p.id}
               type="button"
               onClick={() => open(idx)}
-              className="relative h-[400px] overflow-hidden rounded-[6px] bg-black"
+              className="relative h-[400px] w-[320px] overflow-hidden rounded-[6px] bg-black"
               aria-label={`Abrir ${p.alt}`}
             >
               <Image
@@ -60,7 +59,6 @@ export default function GalleryGrid({ photos }: GalleryGridProps) {
             </button>
           ))}
         </div>
-      </div>
 
       <LightboxModal
         isOpen={isOpen}
