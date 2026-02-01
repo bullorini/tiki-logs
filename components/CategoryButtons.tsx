@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-type Category = "home" | "outdoor" | "color";
+type Category = "home" | "street" | "color";
 
 export default function CategoryButtons() {
   const pathname = usePathname();
 
   const current: Category =
-    pathname === "/outdoor" ? "outdoor" : pathname === "/color" ? "color" : "home";
+    pathname === "/street" ? "street" : pathname === "/color" ? "color" : "home";
 
   const baseBtn =
     "flex h-12 w-full items-center justify-center px-5 transition-colors md:w-[158px]";
@@ -32,7 +32,7 @@ export default function CategoryButtons() {
         Home
       </Link>
 
-      <Link href="/outdoor" className={getBtnClass("outdoor")} style={clipPathStyle}>
+      <Link href="/street" className={getBtnClass("street")} style={clipPathStyle}>
         Street
       </Link>
 

@@ -2,5 +2,7 @@
   { "id": "c1", "src": "/img/color/P9041963_tiki.jpg", "alt": "Color 1" },
   { "id": "c2", "src": "/img/color/PA080910_tiki.jpg", "alt": "Color 2" },
   { "id": "c3", "src": "/img/color/PB300390_tiki.jpg", "alt": "Color 3" },
-  { "id": "c4", "src": "/img/color/PB300673_tiki.jpg", "alt": "Color 4" }
+  { "id": "c4", "src": "/img/color/PB300673_tiki.jpg", "alt": "Color 4" },
+  { "id": "c5", "src": "/img/color/P5230144_tiki.jpg", "alt": "Color 5" },
+  { "id": "c6", "src": "/img/color/P5080124_tiki.jpg", "alt": "Color 6" }
 ]
